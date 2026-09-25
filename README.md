@@ -4,6 +4,12 @@ A high-converting, responsive single-page landing website built for **Smart Sura
 
 ---
 
+## 🌐 Live Website & Links
+- **Official Live Website:** [https://smart-suraksha-rakshak.vercel.app/](https://smart-suraksha-rakshak.vercel.app/)
+- **GitHub Repository:** [https://github.com/Komal251205/SSR.git](https://github.com/Komal251205/SSR.git)
+
+---
+
 ## 🛡️ Company & Brand Information
 - **Company Name:** Smart Suraksha Rakshak (SSR)
 - **Tagline:** *"Your Trusted Partner in Total Security Solutions"*
@@ -36,8 +42,12 @@ A high-converting, responsive single-page landing website built for **Smart Sura
 
 ---
 
-## 🚀 Local Development Setup
+## 🚀 Deployment & Local Setup
 
+### Live Production Deployment
+Hosted on Vercel Edge Network: [https://smart-suraksha-rakshak.vercel.app/](https://smart-suraksha-rakshak.vercel.app/)
+
+### Local Development Setup
 ```bash
 # 1. Clone the repository
 git clone https://github.com/Komal251205/SSR.git
@@ -50,7 +60,7 @@ npm install
 node server.js
 ```
 
-Access the website at: `https://localhost:3000`
+Access locally at: `https://localhost:3000`
 
 ---
 
