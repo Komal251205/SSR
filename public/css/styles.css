@@ -1461,25 +1461,313 @@ textarea.form-control {
   to { transform: translateX(0); opacity: 1; }
 }
 
-/* Responsive Breakpoints */
+/* ==========================================================================
+   Responsive Breakpoints & Mobile Optimization
+   ========================================================================== */
+
+/* Tablet / Medium Screens (Max 1024px) */
 @media (max-width: 1024px) {
-  .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  .contact-section-grid { grid-template-columns: 1fr; }
-  .cta-banner-inner { grid-template-columns: 1fr; text-align: center; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .hero-grid { 
+    grid-template-columns: 1fr; 
+    gap: 2.5rem; 
+  }
+  .contact-section-grid { 
+    grid-template-columns: 1fr; 
+  }
+  .cta-banner-inner { 
+    grid-template-columns: 1fr; 
+    text-align: center; 
+  }
+  .footer-grid { 
+    grid-template-columns: 1fr 1fr; 
+  }
 }
 
+/* Mobile Screens (Max 768px) */
 @media (max-width: 768px) {
-  .nav-menu, .header-cta-btn { display: none; }
-  .mobile-nav-toggle { display: block; }
-  .top-bar-inner { justify-content: center; text-align: center; }
-  .top-info { justify-content: center; }
-  .hero-section { padding-top: 100px; text-align: center; }
-  .hero-subheadline { margin-left: auto; margin-right: auto; }
-  .hero-actions { justify-content: center; }
-  .hero-stats-row { grid-template-columns: 1fr; gap: 1rem; text-align: center; }
-  .footer-grid { grid-template-columns: 1fr; }
-  .mobile-action-bar { display: block; }
-  .floating-actions-container { bottom: 70px; right: 15px; }
-  .floating-call { display: none; } /* Handled by mobile-action-bar */
+  :root {
+    --header-height: 105px;
+  }
+
+  body {
+    padding-bottom: 65px; /* Prevent fixed bottom action bar from covering footer content */
+  }
+
+  html {
+    scroll-padding-top: 105px;
+  }
+
+  /* Header & Top Bar */
+  .nav-menu, .header-cta-btn { 
+    display: none; 
+  }
+  .mobile-nav-toggle { 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    font-size: 1.5rem;
+  }
+  .top-bar-inner { 
+    justify-content: center; 
+    text-align: center; 
+    padding: 0.15rem 0;
+  }
+  .top-info { 
+    justify-content: center; 
+    gap: 0.75rem;
+    font-size: 0.75rem;
+  }
+  .nav-container {
+    padding: 0.5rem 0;
+  }
+  .brand-logo-img {
+    width: 40px;
+    height: 40px;
+  }
+  .brand-name {
+    font-size: 1.05rem;
+    letter-spacing: -0.2px;
+  }
+  .brand-subline {
+    font-size: 0.65rem;
+  }
+
+  /* Hero Section */
+  .hero-section { 
+    padding-top: calc(var(--header-height, 105px) + 1rem); 
+    padding-bottom: 2.5rem;
+    text-align: center; 
+    min-height: auto;
+  }
+  .hero-subheadline { 
+    margin-left: auto; 
+    margin-right: auto; 
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .hero-actions { 
+    justify-content: center; 
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+  .hero-actions .btn {
+    width: 100%;
+    max-width: 380px;
+  }
+  .hero-stats-row { 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 0.5rem; 
+    text-align: center; 
+  }
+  .stat-num {
+    font-size: 1.35rem;
+  }
+  .stat-label {
+    font-size: 0.725rem;
+  }
+  .hero-badge-card {
+    padding: 1.25rem 1rem;
+  }
+  .badge-card-logo {
+    width: 48px;
+    height: 48px;
+  }
+  .badge-card-title {
+    font-size: 1.1rem;
+  }
+  .badge-list-item {
+    font-size: 0.85rem;
+  }
+
+  /* Section Spacing & Layout */
+  .section {
+    padding: 3rem 0;
+  }
+  .section-header {
+    margin-bottom: 2rem;
+  }
+  .section-title {
+    font-size: 1.65rem;
+  }
+  .section-desc {
+    font-size: 0.95rem;
+  }
+
+  /* Cards & Grids */
+  .services-grid,
+  .showcase-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+  .service-card {
+    padding: 1.5rem 1.25rem;
+  }
+  .showcase-body {
+    padding: 1.25rem 1rem;
+  }
+  .showcase-img-wrap {
+    max-height: 240px;
+  }
+
+  /* Comparison Table Touch Scroll Hint */
+  .comparison-wrapper {
+    position: relative;
+    border-radius: var(--radius-sm);
+  }
+  .comparison-table th,
+  .comparison-table td {
+    padding: 0.75rem 0.85rem;
+    font-size: 0.85rem;
+  }
+
+  /* Form & Contact */
+  .cta-banner {
+    padding: 2.25rem 1.25rem;
+    border-radius: var(--radius-md);
+    margin-bottom: 2rem;
+  }
+  .cta-title {
+    font-size: 1.5rem;
+  }
+  .contact-info-card {
+    padding: 1.75rem 1.25rem;
+    border-radius: var(--radius-md);
+  }
+  .form-wrapper {
+    padding: 1.75rem 1.25rem;
+    border-radius: var(--radius-md);
+  }
+  .captcha-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .captcha-box .form-control {
+    width: 100% !important;
+  }
+
+  /* Sticky Bottom Quick Action Bar */
+  .mobile-action-bar { 
+    display: block; 
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+  }
+  .floating-actions-container { 
+    bottom: 75px; 
+    right: 15px; 
+  }
+  .floating-btn {
+    width: 52px;
+    height: 52px;
+  }
+  .floating-btn svg {
+    width: 28px;
+    height: 28px;
+  }
+  .floating-call { 
+    display: none; /* Mobile action bar handles calling */
+  }
+
+  /* Footer */
+  .site-footer {
+    padding-top: 2.5rem;
+    padding-bottom: 1.5rem;
+  }
+  .footer-grid { 
+    grid-template-columns: 1fr; 
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+
+  /* Toast & Modals */
+  .toast-container {
+    top: 15px;
+    right: 15px;
+    left: 15px;
+  }
+  .toast {
+    font-size: 0.875rem;
+    padding: 0.85rem 1rem;
+  }
+}
+
+/* Small Mobile Screens (Max 576px) */
+@media (max-width: 576px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .industries-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  .industry-card {
+    padding: 1.25rem 0.5rem;
+  }
+  .industry-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 0.5rem;
+  }
+  .industry-title {
+    font-size: 0.875rem;
+  }
+
+  .compliance-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  .compliance-badge {
+    padding: 1rem 0.5rem;
+  }
+  .compliance-icon {
+    font-size: 1.6rem;
+    margin-bottom: 0.25rem;
+  }
+  .compliance-name {
+    font-size: 0.95rem;
+  }
+  .compliance-desc {
+    font-size: 0.725rem;
+  }
+
+  .pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .modal-container {
+    margin: 0.5rem;
+  }
+  .modal-header {
+    padding: 1rem 1.25rem;
+  }
+  .modal-body {
+    padding: 1.25rem 1rem;
+  }
+}
+
+/* Extra Small Mobile Screens (Max 380px) */
+@media (max-width: 380px) {
+  .top-info-address {
+    display: none; /* Hide address in top bar on tiny screens to avoid 3-line wrap */
+  }
+  .brand-name {
+    font-size: 0.9rem;
+  }
+  .brand-subline {
+    font-size: 0.6rem;
+  }
+  .stat-num {
+    font-size: 1.1rem;
+  }
+  .stat-label {
+    font-size: 0.65rem;
+  }
 }
